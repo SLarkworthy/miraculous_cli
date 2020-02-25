@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require './lib/miraculous_cli'
+MiraculousCli::CLI.new.call
