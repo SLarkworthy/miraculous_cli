@@ -4,6 +4,8 @@ require_relative "./miraculous_cli/version"
 #require 'open-uri'
 
 require_relative './miraculous_cli/cli'
+require_relative './miraculous_cli/episode'
+
 
 
 module MiraculousCli

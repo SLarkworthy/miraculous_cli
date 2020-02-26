@@ -45,6 +45,8 @@ class MiraculousCli::CLI
       case input
       when "1"
         puts "Here is a list of season #{season} by air date"
+        @test = MiraculousCli::Episode.all
+        puts @test
       when "2"
         puts "Here is a list of season #{season} by production code"
       end
