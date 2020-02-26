@@ -63,7 +63,7 @@ class MiraculousCli::CLI
   end
   
   def date_sort(season)
-    MiraculousCli::Episode.all 
+    puts MiraculousCli::Episode.all 
     puts "You are in date_sort #{season}"
     #the scraper should already scrape these in date order so this should work
     #it currently just prints instances but I will make it print a pretty format eventually.

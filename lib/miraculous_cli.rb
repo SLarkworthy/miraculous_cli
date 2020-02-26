@@ -5,6 +5,7 @@ require_relative "./miraculous_cli/version"
 
 require_relative './miraculous_cli/cli'
 require_relative './miraculous_cli/episode'
+require_relative './miraculous_cli/scraper'
 
 
 
