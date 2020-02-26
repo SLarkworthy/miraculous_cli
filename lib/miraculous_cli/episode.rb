@@ -1,17 +1,9 @@
 class MiraculousCli::Episode
   attr_accessor :title, :code, :release_date
   
-  def self.date_sort(season)
-    #should return instances sorted by date maybe
-    
-  end
- 
-  def self.code_sort(season)
-    #should return instances sorted by code maybe
-  end 
   
   def self.find_by_code(code)
-    #should return the instance with that production code.
+    puts "You made it to the fbc method for code #{code}"
   end
   
   def self.all 

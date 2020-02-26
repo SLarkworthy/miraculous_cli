@@ -38,33 +38,39 @@ class MiraculousCli::CLI
   end
   
   def sorter(season)
-    #I want to use something like Episode.date_sort(season)
-    #Episode.code_sort(season)
     puts "Press 1 to list by air date. Press 2 to sort by production code."
       input = gets.strip
       case input
       when "1"
         puts "Here is a list of season #{season} by air date"
-        @test = MiraculousCli::Episode.all
-        puts @test
+        date_sort(season)
       when "2"
         puts "Here is a list of season #{season} by production code"
+        code_sort(season)
       end
   end
   
   def episode_finder
     #I want some sort of finder method
-    #Episode.find(code)
     puts "Please enter a production code."
     input = gets.strip
-    puts input.to_i 
-    #this gets the production code to hopefully make a finder method out of.
-    #code = input.to_i
+    code = input.to_i
+    MiraculousCli::Episode.find_by_code(code)
   end
   
   def goodbye
     puts "Au revoir! Thank you for using this miraculous CLI!"
   end
   
+  def date_sort(season)
+    MiraculousCli::Episode.all 
+    puts "You are in date_sort #{season}"
+    #the scraper should already scrape these in date order so this should work
+    #it currently just prints instances but I will make it print a pretty format eventually.
+  end
+  
+  def code_sort(season)
+    puts "You successfuly reached the code sort method for season #{season}"
+  end
   
 end
