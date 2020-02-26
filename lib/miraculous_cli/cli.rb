@@ -38,6 +38,8 @@ class MiraculousCli::CLI
   end
   
   def sorter(season)
+    #I want to use something like Episode.date_sort(season)
+    #Episode.code_sort(season)
     puts "Press 1 to list by air date. Press 2 to sort by production code."
       input = gets.strip
       case input
@@ -49,10 +51,13 @@ class MiraculousCli::CLI
   end
   
   def episode_finder
+    #I want some sort of finder method
+    #Episode.find(code)
     puts "Please enter a production code."
     input = gets.strip
     puts input.to_i 
     #this gets the production code to hopefully make a finder method out of.
+    #code = input.to_i
   end
   
   def goodbye
