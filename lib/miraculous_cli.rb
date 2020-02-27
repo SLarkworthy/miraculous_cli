@@ -1,6 +1,6 @@
 require_relative "./miraculous_cli/version"
-#require 'pry'
-#require 'nokogiri'
+require 'pry'
+require 'nokogiri'
 #require 'open-uri'
 
 require_relative './miraculous_cli/cli'
