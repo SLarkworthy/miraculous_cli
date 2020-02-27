@@ -1,25 +1,25 @@
 class MiraculousCli::Episode
   attr_accessor :title, :code, :release_date
   
+  @@all = []
+  
+  def initialize(episode_hash)
+    student_hash.each {|key, value| self.send(("#{key}="), value)}
+    @@all << self
+  end
+
+  def self.create_from_scraper(episodes)
+    episodes.each do |episode_hash|
+      self.new(episode_hash)
+    end
+  end
   
   def self.find_by_code(code)
     puts "You made it to the fbc method for code #{code}"
   end
   
   def self.all 
-    MiraculousCli::Scraper.scrape_episodes("url")
-    #scrape data and return episodes
-    # ep_1 = self.new 
-    # ep_1.title = "The Bubbler"
-    # ep_1.code = 109
-    # ep_1.release_date = "December 6, 2015"
-    
-    # ep_2 = self.new 
-    # ep_2.title = "Mr. Pigeon"
-    # ep_2.code = 106
-    # ep_2.release_date = "December 13, 2015"
-    
-    # [ep_1.title, ep_2.title]
+    @@all
   end
   
   
