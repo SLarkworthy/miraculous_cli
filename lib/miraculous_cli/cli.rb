@@ -3,7 +3,6 @@ class MiraculousCli::CLI
   
   def call
     puts "Welcome to your Miraculous Ladybug Episode Sorter!"
-    binding.pry
     menu
     goodbye
   end
