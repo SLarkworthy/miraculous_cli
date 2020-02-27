@@ -2,9 +2,15 @@
 class MiraculousCli::CLI
   
   def call
+    make_episodes
     puts "Welcome to your Miraculous Ladybug Episode Sorter!"
     menu
     goodbye
+  end
+  
+  def make_episodes
+    episodes = MiraculousCli::Scraper.scrape_episodes
+    MiraculousCli::Episode.create_from_scraper(episodes)
   end
   
   def menu

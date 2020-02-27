@@ -1,6 +1,6 @@
 class MiraculousCli::Scraper
   
-  def self.scrape_episodes(url = nil)
+  def self.scrape_episodes
     episode_array = [] #array of episode hashes in proper format to be instantiated into episodes
     site = "https://miraculousladybug.fandom.com/wiki/Episode_guide"
     page = Nokogiri::HTML(open(site))

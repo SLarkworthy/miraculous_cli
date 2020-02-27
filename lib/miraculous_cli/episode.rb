@@ -4,7 +4,7 @@ class MiraculousCli::Episode
   @@all = []
   
   def initialize(episode_hash)
-    student_hash.each {|key, value| self.send(("#{key}="), value)}
+    episode_hash.each {|key, value| self.send(("#{key}="), value)}
     @@all << self
   end
 
