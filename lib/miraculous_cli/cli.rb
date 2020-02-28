@@ -16,28 +16,23 @@ class MiraculousCli::CLI
   def menu
     input = ""
     while input != "exit"
-      puts "Press 1, 2, or 3 to get the episode list of that season."
+      puts "Press 1, 2, or 3 to get a list of that season's episodes."
       puts "Press 4 to get episode information by production code."
       puts "Press 5 to get episode information by episode title."
       input = gets.strip
-      case input #refactor this later!!!
-      when "1"
-        sorter("1")
-      when "2"
-        sorter("2")
-      when "3"
-        sorter("3")
+      case input
+      when "1".."3"
+        sorter(input)
       when "4"
         episode_code_finder
       when "5"
         episode_title_finder
-      when "exit"
-        puts "Exiting already? Type 'exit' again to confirm."
       else 
-        puts "invalid input"
+        puts "invalid input" unless input == "exit"
       end
+      
       puts "Would you like more information? (y/n)" unless input == "exit"
-      input = gets.strip
+      input = gets.strip unless input == "exit"
       if input == "y" || input == "yes"
         puts "Here are your options!"
       elsif input == "n" || input == "no"
@@ -47,7 +42,8 @@ class MiraculousCli::CLI
   end
   
   def sorter(season)
-    puts "Press 1 to list by air date. Press 2 to sort by production code."
+    puts "Press 1 for episode in order of air date."
+    puts "Press 2 for episodes in order of production code."
       input = gets.strip
       case input
       when "1"
