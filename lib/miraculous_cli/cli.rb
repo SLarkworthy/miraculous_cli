@@ -19,13 +19,13 @@ class MiraculousCli::CLI
       puts "Press 1, 2, or 3 to get the episode list of that season."
       puts "Press 4 to find an episode by production code."
       input = gets.strip
-      case input
+      case input #refactor this later!!!
       when "1"
-        sorter(1)
+        sorter("1")
       when "2"
-        sorter(2)
+        sorter("2")
       when "3"
-        sorter(3)
+        sorter("3")
       when "4"
         episode_finder
       when "exit"
@@ -69,14 +69,18 @@ class MiraculousCli::CLI
   end
   
   def date_sort(season)
-    puts MiraculousCli::Episode.all 
-    puts "You are in date_sort #{season}"
-    #the scraper should already scrape these in date order so this should work
-    #it currently just prints instances but I will make it print a pretty format eventually.
+    MiraculousCli::Episode.all.each do |episode|
+      puts episode.title if episode.code.start_with?(season)
+    end
+    #it currently just prints titles but I will make it print a pretty format eventually.
+    #goal format: 1. The Bubbler - 101
   end
   
   def code_sort(season)
-    puts "You successfuly reached the code sort method for season #{season}"
+    sorted_episode_instances = MiraculousCli::Episode.all.sort {|a, b| a.code <=> b.code}
+    sorted_episode_instances.each do |episode|
+      puts episode.title if episode.code.start_with?(season)
+    end
   end
   
 end
