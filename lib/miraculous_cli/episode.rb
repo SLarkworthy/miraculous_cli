@@ -15,7 +15,7 @@ class MiraculousCli::Episode
   end
   
   def self.find_by_code(code)
-    puts "You made it to the fbc method for code #{code}"
+    puts @@all.find{|episode| episode.code = code}
   end
   
   def self.all 

@@ -57,10 +57,8 @@ class MiraculousCli::CLI
   end
   
   def episode_finder
-    #I want some sort of finder method
     puts "Please enter a production code."
-    input = gets.strip
-    code = input.to_i
+    code = gets.strip
     MiraculousCli::Episode.find_by_code(code)
   end
   
