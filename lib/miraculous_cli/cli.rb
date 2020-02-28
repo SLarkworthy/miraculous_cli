@@ -17,7 +17,7 @@ class MiraculousCli::CLI
     input = ""
     while input != "exit"
       puts "Press 1, 2, or 3 to get the episode list of that season."
-      puts "Press 4 to find an episode by production code."
+      puts "Press 4 to find an episode and it's release date by production code."
       input = gets.strip
       case input #refactor this later!!!
       when "1"
@@ -63,7 +63,7 @@ class MiraculousCli::CLI
     if instance == nil
       puts "Invalid code. Please see episode lists for valid codes."
     else
-      puts instance.title
+      puts "#{instance.title} - #{instance.release_date}"
     end
   end
   
