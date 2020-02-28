@@ -8,8 +8,8 @@ class MiraculousCli::Scraper
     #release_date = page.css("tr")[index].text.split(/\n/)[4]
     #code = page.css("tr")[index].text.split(/\n/)[6]
     #index 10-35, 91-116, 172-197
-    page.css("tr").each_with_index do |episode, index|
-      if (index > 9 && index < 36) || (index > 90 && index < 117) || (index > 171 && index < 198)
+    page.css("div.tabbertab tr").each_with_index do |episode, index|
+      if (index > 0 && index < 27) || (index > 81 && index < 108) || (index > 162 && index < 189)
         episode_attributes = {}
         episode_attributes[:title] = episode.text.strip.to_s.split("\"")[1]
         episode_attributes[:code] = episode.text.split(/\n/)[6]
