@@ -59,7 +59,12 @@ class MiraculousCli::CLI
   def episode_finder
     puts "Please enter a production code."
     code = gets.strip
-    MiraculousCli::Episode.find_by_code(code)
+    instance = MiraculousCli::Episode.find_by_code(code)
+    if instance == nil
+      puts "Invalid code. Please see episode lists for valid codes."
+    else
+      puts instance.title
+    end
   end
   
   def goodbye
