@@ -42,7 +42,7 @@ class MiraculousCli::CLI
   end
   
   def sorter(season)
-    puts "Press 1 for episode in order of air date."
+    puts "Press 1 for episodes in order of air date."
     puts "Press 2 for episodes in order of production code."
       input = gets.strip
       case input
