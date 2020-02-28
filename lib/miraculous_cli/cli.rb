@@ -17,7 +17,8 @@ class MiraculousCli::CLI
     input = ""
     while input != "exit"
       puts "Press 1, 2, or 3 to get the episode list of that season."
-      puts "Press 4 to find an episode and it's release date by production code."
+      puts "Press 4 to get episode information by production code."
+      puts "Press 5 to get episode information by episode title."
       input = gets.strip
       case input #refactor this later!!!
       when "1"
@@ -27,7 +28,9 @@ class MiraculousCli::CLI
       when "3"
         sorter("3")
       when "4"
-        episode_finder
+        episode_code_finder
+      when "5"
+        episode_title_finder
       when "exit"
         puts "Exiting already? Type 'exit' again to confirm."
       else 
@@ -56,7 +59,7 @@ class MiraculousCli::CLI
       end
   end
   
-  def episode_finder
+  def episode_code_finder
     puts "Please enter a production code."
     code = gets.strip
     instance = MiraculousCli::Episode.find_by_code(code)
@@ -64,6 +67,17 @@ class MiraculousCli::CLI
       puts "Invalid code. Please see episode lists for valid codes."
     else
       puts "#{instance.title} - #{instance.release_date}"
+    end
+  end
+  
+  def episode_title_finder
+    puts "Please enter an episode title"
+    title = gets.strip
+    instance = MiraculousCli::Episode.find_by_title(title)
+    if instance == nil
+      puts "Invalid title. Please see episode lists for titles."
+    else
+      puts "#{instance.code} - #{instance.title} - #{instance.release_date}"
     end
   end
   
