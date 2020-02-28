@@ -72,17 +72,19 @@ class MiraculousCli::CLI
   end
   
   def date_sort(season)
-    MiraculousCli::Episode.all.each do |episode|
-      puts episode.title if episode.code.start_with?(season)
+    MiraculousCli::Episode.all.each_with_index do |episode, index|
+      if episode.code.start_with?(season)
+        puts "#{index + 1}. #{episode.title} - #{episode.code}"
+      end
     end
-    #it currently just prints titles but I will make it print a pretty format eventually.
-    #goal format: 1. The Bubbler - 101
   end
   
   def code_sort(season)
     sorted_episode_instances = MiraculousCli::Episode.all.sort {|a, b| a.code <=> b.code}
     sorted_episode_instances.each do |episode|
-      puts episode.title if episode.code.start_with?(season)
+      if episode.code.start_with?(season)
+        puts "#{episode.code} - #{episode.title}"
+      end
     end
   end
   
