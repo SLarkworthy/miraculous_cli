@@ -1,10 +1,6 @@
-Testing version control!
-
 # MiraculousCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/miraculous_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Miraculous Ladybug is a french cartoon that appeals to all ages. Unfortunately, the episodes often get released in bizarre orders. This program allows you to sort episodes by air date or production code, and allows you to type an episode name or production code to get more information about the episode. 
 
 ## Installation
 
@@ -24,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type bin/miraculous_cli to run!
 
 ## Development
 

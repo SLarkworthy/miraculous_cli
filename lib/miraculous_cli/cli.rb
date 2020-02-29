@@ -3,7 +3,7 @@ class MiraculousCli::CLI
   
   def call
     make_episodes
-    puts "Welcome to your Miraculous Ladybug Episode Sorter!"
+    puts "Bonjour! Welcome to your Miraculous Ladybug Episode Sorter!"
     menu
     goodbye
   end
