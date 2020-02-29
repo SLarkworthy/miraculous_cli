@@ -15,11 +15,11 @@ class MiraculousCli::Episode
   end
   
   def self.find_by_code(code)
-    @@all.find{|episode| episode.code == code}
+    self.all.find{|episode| episode.code == code}
   end
   
   def self.find_by_title(title)
-    @@all.find{|episode| episode.title == title}
+    self.all.find{|episode| episode.title == title}
   end
   
   def self.all 
