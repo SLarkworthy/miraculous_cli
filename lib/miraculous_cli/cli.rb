@@ -62,7 +62,7 @@ class MiraculousCli::CLI
     if instance == nil
       puts "Invalid code. Please see episode lists for valid codes."
     else
-      puts "#{instance.title} - #{instance.release_date}"
+      puts "#{instance.code} - #{instance.title} - #{instance.release_date}"
     end
   end
   
